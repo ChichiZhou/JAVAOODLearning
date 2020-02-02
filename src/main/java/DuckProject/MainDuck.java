@@ -9,9 +9,6 @@ public class MainDuck {
     public static void main(String[] args) {
         MallardDuck duck1 = new MallardDuck();
 
-        duck1.setFlyBehavior(new FlyWithWings());
-        duck1.setQuackBehavior(new Quack());
-
         duck1.performFly();
         duck1.performQuack();
 
