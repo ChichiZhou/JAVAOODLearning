@@ -1,7 +1,11 @@
 package PackageModel;
 
+/**
+ * 模板方法的主要作用是定义了一个算法步骤 （或许可以用到我的工作上去）
+ * 并允许子类为一个或多个步骤提供实现
+ */
 public abstract class CaffeineBeverageWithHook {
-    void prepareRecipe(){
+    final void prepareRecipe(){       // 这里定义成 final 之后，子类将无法覆盖
         boilWater();
         brew();
         pourInCup();
