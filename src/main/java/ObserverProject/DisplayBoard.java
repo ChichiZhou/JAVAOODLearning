@@ -8,7 +8,7 @@ public class DisplayBoard implements Observer, DisplaymElement{
 
     public DisplayBoard(Subject weatherData){
         this.weatherData = weatherData;
-        weatherData.registerObserver(this);  // 这个保证构造的同时就已经注册上了
+        weatherData.registerObserver(this);  // 这个保证  构造的同时  就已经注册上了
     }
 
     public void update(float temperature, float humidity, float pressure) {
