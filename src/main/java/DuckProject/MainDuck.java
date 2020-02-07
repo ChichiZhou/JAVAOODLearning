@@ -16,6 +16,9 @@ public class MainDuck {
 
         System.out.println(duck1.flyBehavior.a);   // 事实证明，还是可以在接口中写一个类变量的，但是必须初始化。所以我觉着没啥用
 
+        MallardDuckSon mallardDuckSon = new MallardDuckSon(new FlyWithWings(), new Quack());
+
+        mallardDuckSon.performFly();
 
     }
 }
