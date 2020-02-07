@@ -9,10 +9,12 @@ package DuckProject;
  */
 public class MainDuck {
     public static void main(String[] args) {
-        MallardDuck duck1 = new MallardDuck();
+        MallardDuck duck1 = new MallardDuck(new FlyWithWings(), new Quack());
 
         duck1.performFly();
         duck1.performQuack();
+
+        System.out.println(duck1.flyBehavior.a);   // 事实证明，还是可以在接口中写一个类变量的，但是必须初始化。所以我觉着没啥用
 
 
     }
