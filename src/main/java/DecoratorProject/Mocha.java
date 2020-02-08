@@ -1,16 +1,11 @@
 package DecoratorProject;
 
-public class Mocha extends CondimentDecorate{
-    Beverage beverage;
-
+public class Mocha extends Condiment{
+    Beverage beverage;      // 由于是装饰器，所以需要有一个被装饰的对象
     public Mocha(Beverage beverage){
         this.beverage = beverage;
     }
-    public String getDescription() {
-        return beverage.getDescription() + " " + "Mocha";
+    public int cost() {
+        return beverage.cost() + 2;
     }
-
-    public double cost() {
-        return 0.20 + beverage.cost();
-    }   // 实现父类的抽象方法
 }
