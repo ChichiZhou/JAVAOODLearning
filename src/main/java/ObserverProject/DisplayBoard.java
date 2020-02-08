@@ -1,25 +1,18 @@
 package ObserverProject;
 
-public class DisplayBoard implements Observer, DisplaymElement{
-    private float temperature;
-    private float humidity;
-    private float pressure;
-    private Subject weatherData;
+public class DisplayBoard implements Observer{
+    String temperature;
+    String pressure;
+    WeatherData weatherData;          // 单独一个遥控器也可以调用其类变量
 
-    public DisplayBoard(Subject weatherData){
+    public DisplayBoard(WeatherData weatherData){
         this.weatherData = weatherData;
-        weatherData.registerObserver(this);  // 这个保证  构造的同时  就已经注册上了
-    }
+        weatherData.addObserver(this);   // 采用这种初始化的方式，就不需要在 main 中手动添加 observer
+    };
 
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.pressure = pressure;
+    public void update() {
+        this.temperature = weatherData.temperature;
+        this.pressure = weatherData.presure;
 
-        display();
-    }
-
-    public void display() {
-        System.out.println("Board says" + temperature + " " + humidity + " " + pressure);
     }
 }

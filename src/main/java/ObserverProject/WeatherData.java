@@ -2,35 +2,31 @@ package ObserverProject;
 
 import java.util.ArrayList;
 
-public class WeatherData implements Subject{
-    private ArrayList<Observer> observers;  // 这里仅仅是一个指针
-    private float temperature;
-    private float humidity;
-    private float pressure;
+public class WeatherData implements Subject {
+    String temperature;
+    String presure;
+    ArrayList<Observer> observerArrayList;
 
-    public WeatherData(){
-        observers = new ArrayList<Observer>();
+    public WeatherData(String temperature, String presure){
+        this.temperature = temperature;
+        this.presure = presure;
+        this.observerArrayList = new ArrayList<Observer>();
     }
 
-    public void registerObserver(Observer o) {
-        observers.add(o);
+    public void addObserver(Observer o) {
+        observerArrayList.add(o);
     }
 
-    public void removeObserver(Observer o) {
-        observers.remove(o);
+    public void deleteObserver(Observer o) {
+        observerArrayList.remove(o);
     }
 
     public void notifyObserver() {
-        for (Observer o : observers){
-            o.update(temperature, humidity, pressure);
+        for (Observer o : observerArrayList){
+            o.update();
         }
     }
 
-    public void setMeasurement(float temperature, float humidity, float perssure){
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.pressure = perssure;
 
-        notifyObserver();   // 这个保证能够通知到所有的 observer
-    }
+
 }

@@ -2,15 +2,15 @@ package ObserverProject;
 
 public class Main {
     public static void main(String[] args) {
-        /**
-         * 这个模式最重要的是对象的生成顺序
-         *
-         */
-        WeatherData weatherData = new WeatherData(); // 这里一定要先创建一个 weatherData 否则无法创建 DisplayBoard
+        WeatherData weatherData = new WeatherData("1", "2");
+        DisplayBoard displayBoard = new DisplayBoard(weatherData);
+        displayBoard.weatherData = weatherData;
 
-        DisplayBoard currentDisplay = new DisplayBoard(weatherData);
-        DisplayBoard staticDisplay = new DisplayBoard(weatherData);
+//        weatherData.addObserver(displayBoard);
+        weatherData.notifyObserver();
 
-        weatherData.setMeasurement(10, 20, 30);
+        System.out.println(displayBoard.temperature);
+
+
     }
 }
