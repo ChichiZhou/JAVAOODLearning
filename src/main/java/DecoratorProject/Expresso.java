@@ -1,12 +1,7 @@
 package DecoratorProject;
 
 public class Expresso extends Beverage{
-
-    public Expresso(){
-        description = "Expresso";
-    }
-
-    public double cost() {
-        return 1.99;
+    public int cost() {
+        return 1;
     }
 }

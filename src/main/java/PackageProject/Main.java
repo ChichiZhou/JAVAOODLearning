@@ -9,8 +9,7 @@ public class Main {
          */
         RemoteControl remoteControl = new RemoteControl();
         Light light = new Light();
-
-        LightOnCommand lightOnCommand = new LightOnCommand(light);
+        LightOnCommand lightOnCommand = new LightOnCommand(light);  // 初始化 RemoteController
 
         remoteControl.setCommand(0, lightOnCommand, new NoCommand());
 

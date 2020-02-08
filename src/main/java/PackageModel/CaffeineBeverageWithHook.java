@@ -14,7 +14,7 @@ public abstract class CaffeineBeverageWithHook {
         }
     }
 
-    abstract void brew();
+    abstract void brew();      // 写成抽象方法的目的就是为了 ———— 让子类别忘了去实现！！！！！
 
     abstract void addCondiment();
 
