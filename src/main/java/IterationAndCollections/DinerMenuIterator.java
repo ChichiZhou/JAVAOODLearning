@@ -11,15 +11,17 @@ public class DinerMenuIterator<T> implements MenuIterator {
     private int pos = 0;
 
     public boolean hasNext() {
-        return pos!=list.size();
+        return pos!=list.size() && list.get(pos) != null;
     }
 
     public MenuItem next() {
         Object[] elementData = list.toArray();
-        if (pos >= elementData.length)
+
+        if (pos > elementData.length)
             throw new ConcurrentModificationException();
+        MenuItem nextMenuItem = (MenuItem)elementData[pos];
         pos += 1;
-        return (MenuItem) elementData[pos];
+        return nextMenuItem;
     }
 
     public void remove() {

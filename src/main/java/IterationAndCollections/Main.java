@@ -12,5 +12,19 @@ public class Main {
          *
          */
         MenuItem menuItem = new MenuItem("Ass", "Shilin's ass", 1.2);
+
+        /**
+         * 使用 Iterator 的方法
+         *
+         * 生成这个对象的 iterator 然后迭代这个 iterator
+         */
+        DinerMenu dinerMenu = new DinerMenu();
+        MenuIterator menuIterator = dinerMenu.createIterator();
+
+        while(menuIterator.hasNext()){
+            MenuItem nextMenuItem = menuIterator.next();
+            System.out.println(nextMenuItem.name);
+        }
+
     }
 }
