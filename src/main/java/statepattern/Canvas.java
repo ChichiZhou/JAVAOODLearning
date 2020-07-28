@@ -1,21 +1,21 @@
 package statepattern;
 
 public class Canvas {
-    private ToolType currentTool;
+    private Tool currentTool;
 
-    public ToolType getCurrentTool() {
+    public Tool getCurrentTool() {
         return currentTool;
     }
 
-    public void setCurrentTool(ToolType currentTool) {
+    public void setCurrentTool(Tool currentTool) {
         this.currentTool = currentTool;
     }
 
     public void mouseDown(){
-
+        currentTool.mouseDown();
     }
 
     public void mouseUp(){
-
+        currentTool.mouseUp();
     }
 }

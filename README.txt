@@ -35,3 +35,9 @@ Reduce complexity by hiding unnecessary details
 UML
 composition: 一个class 需要另一个 class 才能构建
 dependency: 一个class 的创建不需要另一个 class，但是在某个method中可能需要这个class的reference （一个class是另一个class中method的 parameter）
+========================================================================================================
+一个原则：
+如果你改变一个 class，那么所有的改变仅限于这个 class，不能牵扯到别的 class
+========================================================================================================
+single responsibility
+一个class 只干一件事。这里的干一件事，指的是只实现一个logic 的代码。
