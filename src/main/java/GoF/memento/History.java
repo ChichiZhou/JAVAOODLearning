@@ -3,6 +3,9 @@ package GoF.memento;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 其作用是存储之前的状态
+ */
 public class History {
     private List<EditorState> states = new ArrayList<>();
 

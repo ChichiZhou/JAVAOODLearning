@@ -1,9 +1,10 @@
 package GoF.strategy;
 
 public class ImageStorage {
-    private Compressor compressor;
-    private Filter filter;
+    private Compressor compressor;     // composition
+    private Filter filter;             // composition
 
+    // 构造器
     public ImageStorage(Compressor compressor, Filter filter){
         this.compressor = compressor;
         this.filter = filter;

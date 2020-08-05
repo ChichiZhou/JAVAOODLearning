@@ -2,7 +2,7 @@ package GoF.mediator;
 
 public class ArticleDialogBox extends DialogBox{
     private ListBox articleListBox = new ListBox(this);
-    private TextBox titletextBox = new TextBox(this);
+    private TextBox titleTextBox = new TextBox(this);
     private Button saveButton = new Button(this);
 
     public void simulateUserInteraction(){
@@ -15,18 +15,18 @@ public class ArticleDialogBox extends DialogBox{
     public void changed(UIControl control) {
         if(control == articleListBox){
             articleSeletced();
-        } else if (control == titletextBox){
+        } else if (control == titleTextBox){
             titleChanged();
         }
     }
 
     private void articleSeletced(){
-        titletextBox.setContent(articleListBox.getSelection());
+        titleTextBox.setContent(articleListBox.getSelection());
         saveButton.setEnable(true);
     }
 
     private void titleChanged(){
-        String content = titletextBox.getContent();
+        String content = titleTextBox.getContent();
         Boolean isEmpty = (content == null || content.isEmpty());
         saveButton.setEnable(!isEmpty);
     }

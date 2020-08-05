@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BrowseHistory {
-    // 这里有一点质疑？？？？？？？？？？
+    // 如何这里换成一个 Array，则只需改变这里的代码，不需要改变 Main 里的代码
+    // 但是我觉着还是可以再进一步改变的
     private List<String> urls = new ArrayList<>();
 
     public void push(String url){
@@ -19,12 +20,13 @@ public class BrowseHistory {
         return lastUrl;
     }
 
-    public Iterator createIterator(){
+    public IteratorModel createIterator(){
         return new ListIterator(this);
     }
 
     // nested class because this is inside BrowseHistory
-    public class ListIterator implements Iterator{
+    // 这里使用了 内部类
+    public class ListIterator implements IteratorModel<String> {
         private BrowseHistory history;
         private Integer index;
 
@@ -33,12 +35,13 @@ public class BrowseHistory {
         }
         @Override
         public boolean hasNext() {
-            // because this class is the nested class, it can see all the member of this class even if they are private
+            // 因为是内部类，所以能够知道 private 变量
             return (index < history.urls.size());
         }
 
+        // 泛型 这里返回的数据类型和最开始 IteratorModel<T> 中的 T 是一致的
         @Override
-        public Object current() {
+        public String current() {
             return history.urls.get(index);
         }
 

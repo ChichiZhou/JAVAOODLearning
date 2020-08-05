@@ -1,5 +1,8 @@
 package GoF.memento;
 
+/**
+ * 其作用是保存之前的操作
+ */
 public class EditorState {
     private final String content;
 

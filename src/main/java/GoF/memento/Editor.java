@@ -1,5 +1,8 @@
 package GoF.memento;
 
+/**
+ * 其作用是生成 EditorState
+ */
 public class Editor {
     private  String content;
 
