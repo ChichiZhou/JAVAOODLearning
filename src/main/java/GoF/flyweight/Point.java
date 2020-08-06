@@ -5,7 +5,6 @@ public class Point {
     private Integer y;
     private PointIcon poinIcon;
 
-
     public Point(Integer x, Integer y, PointIcon poinIcon) {
         this.x = x;
         this.y = y;

@@ -3,6 +3,9 @@ package GoF.flyweight;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 用来保证 icon 是 singleton
+ */
 public class PointIconFactory {
     private Map<PointType, PointIcon> icons = new HashMap<>();
 
