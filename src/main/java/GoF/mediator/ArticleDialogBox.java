@@ -1,6 +1,7 @@
 package GoF.mediator;
 
 public class ArticleDialogBox extends DialogBox{
+    // 所有的 box 都是依赖这个 dialog box 所生成的
     private ListBox articleListBox = new ListBox(this);
     private TextBox titleTextBox = new TextBox(this);
     private Button saveButton = new Button(this);
