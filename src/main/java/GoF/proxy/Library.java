@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Library {
+    // 维护一个
     private Map<String, Ebook> ebooks = new HashMap<>();
 
     public void add(Ebook ebook){

@@ -12,6 +12,7 @@ public class ArticleDialogBox extends DialogBox{
         System.out.println("button");
     }
 
+    // 具体逻辑在此实现
     @Override
     public void changed(UIControl control) {
         if(control == articleListBox){

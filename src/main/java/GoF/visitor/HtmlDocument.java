@@ -10,6 +10,7 @@ public class HtmlDocument {
         nodes.add(node);
     }
 
+    // 传入 operation
     public void execute(Operation operation){
         for(HtmlNode node: nodes){
             node.execute(operation);

@@ -14,6 +14,6 @@ public class Button extends UIControl{
 
     public void setEnable(boolean enable) {
         isEnable = enable;
-        owner.changed(this);
+        owner.changed(this);    // 只是通知 dialogbox，我变了
     }
 }

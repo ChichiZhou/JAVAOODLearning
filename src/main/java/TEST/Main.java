@@ -3,6 +3,8 @@ package TEST;
 public class Main {
     public static void main(String[] args) {
         Father father = new Father();
+        System.out.println(father.list.size());
+
         Son1 son1 = new Son1();
         Son2 son2 = new Son2();
 
