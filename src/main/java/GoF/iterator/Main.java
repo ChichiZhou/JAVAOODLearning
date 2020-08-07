@@ -11,7 +11,8 @@ public class Main {
 
         while (iteratorModel.hasNext()){
             // 这里为什么是 Object ？？？？
-            Object currentString = iteratorModel.current();
+            // 因为上面生成的是 IteratorModel，所以下面是按照 interface 的类型来返回的
+            String currentString = (String)iteratorModel.current();
             System.out.println(currentString);
             iteratorModel.next();
         }
