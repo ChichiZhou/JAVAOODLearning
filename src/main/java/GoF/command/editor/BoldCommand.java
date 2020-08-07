@@ -17,6 +17,7 @@ public class BoldCommand implements UndoableCommand{
 
     @Override
     public void execute() {
+        // htmlDocument 中现在的 content 将会是以后的 content
         prevContent = htmlDocument.getContent();
         htmlDocument.makeBold();
         history.push(this);

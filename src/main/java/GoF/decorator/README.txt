@@ -7,5 +7,7 @@
 
 favor composition over inheritance
 
+我组成我自己
+
 
 

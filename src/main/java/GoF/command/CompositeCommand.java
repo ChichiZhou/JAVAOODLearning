@@ -14,6 +14,7 @@ public class CompositeCommand implements Command {
     public void add(Command command){
         commands.add(command);
     }
+
     @Override
     public void execute() {
         for (Command command: commands){
